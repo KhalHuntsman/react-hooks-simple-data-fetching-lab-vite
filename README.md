@@ -83,4 +83,4 @@ CSS — Visual styling and layout
 DogAPI — Public API for fetching dog pictures
 ________________________________________________________________________________________________________________________________________
 Summary
-This project provides a clear and concise demonstration of building a functional API-driven interface using React. By combining state management, component composition, and asynchronous data fetching, it offers a solid introduction to common patterns found in modern front-end development. Its simple architecture and modular design make it an excellent foundation for expanding into more complex applications or for use as a teaching tool.
+This project provides a clear, concise example of building an API-driven interface with React. By combining state management, component composition, and asynchronous data fetching, it demonstrates common patterns found in modern front-end development. Its simple architecture makes it an excellent starting point for learners or a base for more complex applications.
