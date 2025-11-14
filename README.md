@@ -1,77 +1,86 @@
-# React Simple Data Fetching Lab
+# Dog Images Application
 
-## Learning Goals
+This project is a lightweight single-page application built with React and Vite. It fetches random dog photos from the publicly available Dog CEO API and displays them in a clean, interactive interface. Users can load new dog images on demand and experience dynamic updates without page reloads. The project demonstrates essential React concepts such as state management, side effects, prop passing, and component modularity.________________________________________________________________________________________________________________________________________
+## Purpose
 
-- Use the `useEffect` hook to fetch data from an API and render to the page.
-- Use an event handler to fetch data from an API and render to the page.
+The goal of this application is to provide an approachable example of consuming an external API inside a React environment. It serves as both a beginner-friendly learning tool and a simple template for more advanced projects that work with asynchronous data. The codebase is intentionally minimal, readable, and easy to extend.________________________________________________________________________________________________________________________________________
+### Features
 
-## Getting Started
-- Fork this lab on GitHub and clone locally.
-- To run the lab:
-```bash
-npm run dev
-```
-- To run the test suite:
-```bash
-npm run test
-```
-- Commit and push your code as you go.
+Automatically fetches a dog picture when the app loads
 
-## Deliverables
+Fetch a new random dog image at any time using a button
 
-This lab is missing the `App` component that `index.js` is looking for. To pass
-the tests in this lab:
+Displays a loading state while waiting for the API
 
-- Create an `App` component from scratch, along with any other components you 
-  choose for the component hierachy.
-- Use the `useEffect` hook in the `App` component. Inside the callback for
-  `useEffect`, send a `fetch` request to
-  `https://dog.ceo/api/breeds/image/random`, a free API that returns a random
-  image of a dog.
-- Display a `<p>` tag with the text of "Loading..." when the component is first
-  rendered
-- After receiving a response from the API, show the dog image in an `<img>` tag,
-  with the `alt` attribute set to "A Random Dog".
-  - For the test suite to work properly, this should be the only `<img>` tag in 
-  the application .
-- Create a `<button>` tag that, on click, fetches a new dog image and updates the 
-  dog image displayed.
-  - For the test suite to work properly, this should be the only `<button>` tag in 
-  the application .
+Clean separation of logic and UI components
 
-## Lab Instructions
-### 1. Define the Problem
-* Load a random dog image on the page when the app first loads.
-* Allow the user to change the dog image by a button click.
-* Display a loading message for the user while waiting for API requests.
-### 2. Determine the Design
-* Determine Component Tree
-  * At minimum, you'll need an App component for the test suite
-* Determine state and props needed for each component
-### 3. Develop the Code
-* Open React application in browser
-```bash
-npm run dev
-```
-  - Run test suite
-```bash
-npm run test
-```
-* Create components and render
-* Manage component state and props
-* Implement useEffect and button with onClick
-* Add fetch requests to both the event handler and useEffect
-  * Fetch requests should make a GET request to “https://dog.ceo/api/breeds/image/random”
-* Update state accordingly to store the current dog image
-* Render the dog image in the jsx based on the data from the fetch request
-  * Be sure to look at how the data is formatted from the fetch request when setting the 
-  properties of the HTML image tag.
-### 4. Test and Refine 
-* Debugging and testing during coding using React DevTools in Chrome
-### 5. Document and Maintain 
-* Commit as you go, writing meaningful commit messages
-* Push commit history to GitHub periodically and when lab is complete
+Simple, modular component structure
 
-## Submission
-Once the lab is complete, all tests are passing, and you've pushed the completed code to 
-your forked repo on GitHub, submit your GitHub repo through Canvas using CodeGrade.
+Uses the Dog CEO API with no authentication required
+
+Fast development environment powered by Vite
+________________________________________________________________________________________________________________________________________
+#### Component Structure
+src/
+├─ App.jsx              // Root component: manages state, API calls, and layout
+│
+├─ components/
+│  ├─ DogDisplay.jsx   // Displays the current dog or a loading message
+│  └─ FetchButton.jsx   // Button component that fetches a new dog
+│
+├─ main.jsx             // Entry point that renders the App component
+├─ App.css            // Global stylesheet and optional layout styling
+└─ Index.css            // Included in the initial github repo but unused for the application
+
+This structure keeps the application modular and easy to maintain. Core logic is centralized in App.jsx, while UI components remain focused and purpose-specific. Props are used to pass state and event handlers cleanly between components.
+________________________________________________________________________________________________________________________________________
+##### State Management
+
+State is handled at the top level inside App.jsx, including:
+
+- The current dog image URL
+
+- The loading state during API requests
+
+React’s useState manages these values, and useEffect triggers the initial dog fetch on mount.
+Child components receive data and event handlers through props, maintaining clear and predictable data flow.
+________________________________________________________________________________________________________________________________________
+###### Styling and Interface
+
+- The dog image is displayed inside a dedicated container
+
+- The fetch button is centered and styled for easy interaction
+
+- The loading state appears instantly while awaiting data
+
+- Styles are intentionally minimal to keep the project focused on functionality, but can be expanded for more polished designs
+________________________________________________________________________________________________________________________________________
+####### Installation and Running the Application
+
+1) Install dependencies:
+
+- npm install
+
+2) Start the development server:
+
+- npm run dev
+
+
+Open the application in a browser:
+
+http://localhost:5173/
+
+Technologies Used
+
+React — Component-based UI development
+
+Vite — Lightning-fast development server and build tooling
+
+JavaScript — Application logic, API communication, and state handling
+
+CSS — Visual styling and layout
+
+DogAPI — Public API for fetching dog pictures
+________________________________________________________________________________________________________________________________________
+Summary
+This project provides a clear and concise demonstration of building a functional API-driven interface using React. By combining state management, component composition, and asynchronous data fetching, it offers a solid introduction to common patterns found in modern front-end development. Its simple architecture and modular design make it an excellent foundation for expanding into more complex applications or for use as a teaching tool.
